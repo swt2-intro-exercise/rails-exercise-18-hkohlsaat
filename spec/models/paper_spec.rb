@@ -12,4 +12,14 @@ RSpec.describe Paper, type: :model do
     expect(paper).not_to be_valid
   end
 
+  it "should validate year to be present" do
+    paper = Paper.new(title: "Computer Science in rough times", venue: "HPI, Potsdam, Germany")
+    expect(paper).not_to be_valid
+  end
+
+  it "should validate year to be an integer" do
+    paper = Paper.new(title: "Computer Science in rough times", venue: "HPI, Potsdam, Germany", year: "1968")
+    expect(paper).not_to be_valid
+  end 
+
 end
