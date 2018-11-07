@@ -18,7 +18,7 @@ RSpec.describe Paper, type: :model do
   end
 
   it "should validate year to be an integer" do
-    paper = Paper.new(title: "Computer Science in rough times", venue: "HPI, Potsdam, Germany", year: "1968")
+    paper = Paper.new(title: "Computer Science in rough times", venue: "HPI, Potsdam, Germany", year: Author.new)
     expect(paper).not_to be_valid
   end 
 
